@@ -1,32 +1,23 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 <body>
-    <h1>
-        Ye mera home hai...
-    </h1>
+    <form method="post">
 
-    <ul>
-        <li>
-            <a href="about">About</a>
-        </li>
-        <li>
-            <a href="contact">Contact</a>
-        </li>
-    </ul>
+        {% csrf_token %}
 
-    <div style="text-align: center;">
-        <img src="{% static 'img/mypic2.jpeg' %}" height="300px" width="500px" alt="birthday" style="border:5px solid grey;border-radius: 95%;">
-    </div>
+        <label for="user">Name:</label>
+        <input type="text" name="uname" id="user">
 
+        <label for="email">Email:</label>
+        <input type="email" name="uemail" id="email">
+
+        <br>
+      <input type="submit">
+    </form>
 </body>
 </html>
