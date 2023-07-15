@@ -5,10 +5,13 @@ def home(request):
     
     if request.method == "POST":
         uname = request.POST["uname"]
-        uemail = request.POST["uemail"]
+        upassword = request.POST["upassword"]
         
-        print(uname)
-        print(uemail)
+        if uname == "angaar" and upassword == "angaar":
+            return render(request, "success.html")
+        
+        else:
+            return render(request, "invalid.html")
     
     return render(request, "home.html")
 
